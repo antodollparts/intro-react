@@ -1,14 +1,15 @@
 import Tarjeta from './components/Tarjeta';
 import ListaCompras from './components/ListaCompras';
+import ContadorTareas from './components/ContadorTareas';
 
 function App() {
 
   return (
-    <div>
-      <h1>Mi tarjeta de presentación</h1>
-      <Tarjeta />
-      <ListaCompras />
-    </div>
+    <>
+      {/* <Tarjeta /> */}
+      {/*<ListaCompras />*/}
+      <ContadorTareas />
+    </>
   )
 }
 
