@@ -1,4 +1,5 @@
-import Tarjeta from './Tarjeta';
+import Tarjeta from './components/Tarjeta';
+import ListaCompras from './components/ListaCompras';
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <h1>Mi tarjeta de presentación</h1>
       <Tarjeta />
+      <ListaCompras />
     </div>
   )
 }
