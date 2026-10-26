@@ -5,6 +5,11 @@ import Planeta from './components/Planeta';
 import Game from './components/Game';
 import InventoryManager from './components/InventoryManager';
 import React, { useState, useEffect, useMemo } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Citas from './pages/Citas';
+import CitaDetalle from './pages/CitaDetalle';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -41,16 +46,18 @@ function App() {
   // Función para manejar el botón de aterrizaje
   const handleAterrizar = () => {
     setEstadoNave("Aterrizando");
-    
+
     // Seleccionar un planeta de la lista según los que ya se han visitado
     const siguientePlaneta = nombresDisponibles[planetasVisitados.length % nombresDisponibles.length];
-    
+
     // Añade el planeta al array
     setPlanetasVisitados((prevPlanetas) => [...prevPlanetas, siguientePlaneta]);
   };
 
   return (
-    <div style={{ padding: '30px', fontFamily: 'Arial, sans-serif', maxWidth: '500px', margin: '0 auto' }}>
+    <>
+
+      {/*<div style={{ padding: '30px', fontFamily: 'Arial, sans-serif', maxWidth: '500px', margin: '0 auto' }}>
         {/* <Tarjeta /> */}
       {/*<ListaCompras />*/}
       {/*<ContadorTareas />*/}
@@ -88,8 +95,21 @@ function App() {
         )}
       </div>*/}
       {/*<Game />*/}
-      <InventoryManager />
-    </div>
+      {/*<InventoryManager />*/}
+      {/*</div>*/}
+      <BrowserRouter>
+        <nav style={{ padding: '15px 30px', background: '#1e293b', display: 'flex', gap: '20px' }}>
+        <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontWeight: 'bold' }}>Inicio</Link>
+        <Link to="/citas" style={{ color: '#fff', textDecoration: 'none', fontWeight: 'bold' }}>Ver Citas</Link>
+      </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/citas" element={<Citas />} />
+          <Route path="/cita/:id" element={<CitaDetalle />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 
