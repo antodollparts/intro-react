@@ -2,6 +2,7 @@ import Tarjeta from './components/Tarjeta';
 import ListaCompras from './components/ListaCompras';
 import ContadorTareas from './components/ContadorTareas';
 import Planeta from './components/Planeta';
+import Game from './components/Game';
 import React, { useState, useEffect, useMemo } from 'react';
 
 function App() {
@@ -52,7 +53,7 @@ function App() {
         {/* <Tarjeta /> */}
       {/*<ListaCompras />*/}
       {/*<ContadorTareas />*/}
-      <h1>🚀 Explorador</h1>
+      {/*<h1>🚀 Explorador</h1>
       
       <div style={{ background: '#f7fafc', padding: '15px', borderRadius: '8px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
         <p><strong>Distancia recorrida:</strong> {distancia} km</p>
@@ -84,7 +85,8 @@ function App() {
             <Planeta key={index} nombre={planeta} />
           ))
         )}
-      </div>
+      </div>*/}
+      <Game />
     </div>
   )
 }
