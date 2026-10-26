@@ -3,6 +3,7 @@ import ListaCompras from './components/ListaCompras';
 import ContadorTareas from './components/ContadorTareas';
 import Planeta from './components/Planeta';
 import Game from './components/Game';
+import InventoryManager from './components/InventoryManager';
 import React, { useState, useEffect, useMemo } from 'react';
 
 function App() {
@@ -86,7 +87,8 @@ function App() {
           ))
         )}
       </div>*/}
-      <Game />
+      {/*<Game />*/}
+      <InventoryManager />
     </div>
   )
 }
